@@ -1,0 +1,24 @@
+
+        .header_nav_back{
+            background-color: black;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            width: 100%;
+            padding: 20px;
+            color: white;
+        }
+
+        .item_nav{
+            text-emphasis-color: white;
+        }
+        a:link, a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover, a:active{
+            padding: 5px;
+            background-color: white;
+            color: black;
+        }

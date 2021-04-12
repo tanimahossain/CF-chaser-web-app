@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>CodeForces Chaser</title>
+    <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+      height: auto;
+      border: solid black;
+      margin-top: 20px;
+    }
+    ul.nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        width: 100%;
+        text-decoration: none;
+    }
+    li.nav_li {
+        float: left;
+        color: white;
+        text-decoration: none;
+    }
+    li a.nav_lia {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a.nav_hov:hover:not(.active) {
+        background-color: #111;
+        text-decoration: none;
+    }
+    li a.nav_ac_hov:hover{
+        background-color: #2089CA;
+        text-decoration: none;
+    }
+    .active {
+        background-color: #2089CA;
+        text-decoration: none;
+    }
+
+    /* Style the list items */
+    ul li.frnd {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        background: #a8cadf;
+        font-size: 18px;
+        transition: 0.2s;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    /* Set all odd list items to a different color (zebra-stripes) */
+    ul li.frnd:nth-child(odd) {
+        background: #9ec3da;
+    }
+
+    /* Darker background-color on hover */
+    ul li.frnd:hover {
+        background: #93bfd8;
+    }
+    .btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .previous {
+        background-color: #b0d0e4;
+        color: black;
+        padding: 15px;
+    }
+    .next {
+        background-color: #2089CA;
+        color: white;
+        padding: 15px;
+    }
+    </style>
+</header>
+<section >
+    <ul class="nav">
+        <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
+        <li class="nav_li"><a href="Friends.html" class="nav_lia active nav_ac_hov" >Friends</a></li>
+        <li class="nav_li"><a href="Chase By Contest.html" class="nav_lia nav_hov">Chase By Contest</a></li>
+        <li class="nav_li" style="float:right"><a href="Login.html" class="nav_lia nav_hov">Log Out</a></li>
+    </ul>
+    <form action="/action_page.php">
+    <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">
+        <input type="text" class="form-control" placeholder="CodeForces Handle" style="height: 40px; text-align: center; ">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-plus"></i></button>
+            <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-minus"></i></button>
+        </div>
+    </div>
+    </form>
+    <div>
+        <ul class="frnd">
+            <li class="frnd">De.wilde</li>
+            <li class="frnd">el.duivel</li>
+            <li class="frnd">KingEngine</li>
+            <li class="frnd">Riadh_Hasan</li>
+            <li class="frnd">strange.r</li>
+          </ul>
+    </div>
+    <div style="text-align: right; margin-top: 2%;">
+        <a href="#" class="previous" style="margin-right: 0%; text-decoration: none;">&laquo; Previous</a>
+        <a href="#" class="next" style="margin-right: 9.8%; text-decoration: none;">Next &raquo;</a>
+    </div>
+</section>
+</html>
