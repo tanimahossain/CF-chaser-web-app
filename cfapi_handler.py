@@ -10,13 +10,18 @@ hdr = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.
 # ---------------------------------------------------------------------------
 
 def get_json(url):
-	req = Request(url, headers=hdr)
-	page = Ureq(req)
+	try:
+		req = Request(url, headers=hdr)
+		page = Ureq(req)
+	except:
+		return None
+
 	try:
 		js = page.read().decode()
 		js = json.loads(js)
 	except:
-		js = None
+		return None
+
 	return js
 
 # ---------------------------------------------------------------------------
@@ -33,16 +38,19 @@ def user_profile(username):
 		return ret
 	js = js["result"][0]
 
-	ret["name"] = js["firstName"] + " " + js["lastName"];
-	ret["handle"] = js["handle"];
-	ret["organization"] = js["organization"];
-	ret["max_rating"] = js["maxRating"];	
-	ret["max_rank"] = js["maxRank"];
-	ret["cur_rating"] = js["rating"];
-	ret["cur_rank"] = js["rank"];
-	ret["friend_of"] = js["friendOfCount"];
-	ret["address"] = js["city"] + ", " + js["country"];
-	ret["profile_picture"] = "https:"+js["titlePhoto"];
+	try:
+		ret["name"] = js["firstName"] + " " + js["lastName"];
+		ret["handle"] = js["handle"];
+		ret["organization"] = js["organization"];
+		ret["max_rating"] = js["maxRating"];	
+		ret["max_rank"] = js["maxRank"];
+		ret["cur_rating"] = js["rating"];
+		ret["cur_rank"] = js["rank"];
+		ret["friend_of"] = js["friendOfCount"];
+		ret["address"] = js["city"] + ", " + js["country"];
+		ret["profile_picture"] = "https:"+js["titlePhoto"];
+	except:
+		return {}
 
 	return ret;
 
@@ -66,6 +74,7 @@ def current_population():
 # ---------------------------------------------------------------------------
 
 def recent_performance(username, last_x_day):
+	last_x_day = int(last_x_day)
 	url = "https://codeforces.com/api/user.status?handle="
 	url += username
 	js = get_json(url)
@@ -132,6 +141,9 @@ def contest_participation(username):
 	for submission in js["result"]:
 		contest_id.add(submission["contestId"])
 	
+	contest_id = list(contest_id)
+	contest_id.sort()
+
 	return [str(x) for x in contest_id]
 
 # ---------------------------------------------------------------------------
@@ -149,7 +161,7 @@ def contest_solve(username, contest_id):
 		if submission["verdict"] == "OK":
 			if submission["problem"]["index"] not in ac_prob:
 				ac_prob.add(submission["problem"]["index"])
-	return list(ac_prob)
+	return sorted(list(ac_prob))
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
