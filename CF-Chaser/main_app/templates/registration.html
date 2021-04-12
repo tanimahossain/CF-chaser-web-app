@@ -65,20 +65,14 @@
 <section>
     <div style="background-color: lavender; width:70%; margin-left: auto; margin-right: auto;">
         <h1 style="text-align: center; background-color: lavender; color: rgb(29, 0, 158); font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;">Register</h1>
-
-        <br>
         {% if error %}
-            <p> <b><i>{{ error }}</i></b> </p>
-            <br>
-            {{ hnd }}
+            <p style="text-align: center; background-color: lavender; color: darkred; font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;"> <b><i>{{ error }}</i></b> </p>
         {% endif %}
 
         <form action="{% url 'registration' %}", method='POST'>
             {% csrf_token %}
 
             <div class="form-outline" style="margin-left: auto; margin-right: auto; width:50%">
-                <label class="form-label" for="name">Name:</label><br>
-                <input type="text" id="name" class="form-control" name="name"><br>
 
                 <label class="form-label" for="email">Email:</label><br>
                 <input type="email" id="email"  class="form-control" name="email"><br>
