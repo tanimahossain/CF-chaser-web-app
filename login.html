@@ -5,59 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <title>CodeForces Chaser</title>
     <style>
-        img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-          height: auto;
-          border: solid black;
-          margin-top: 20px;
+        /*nav bar hovering style formats*/
+        li a.nav_hov:hover:not(.active) {
+            background-color: #111;
+            text-decoration: none;
         }
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        width: 100%;
-        text-decoration: none;
-    }
-    li {
-        float: left;
-    }
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a:hover:not(.active) {
-        background-color: #111;
-        text-decoration: none;
-    }
-    li a:hover{
-        color: white;
-        background-color: #91784e;
-        text-decoration: none;
-    }
-    .active {
-        background-color: #91784e;
-        text-decoration: none;
-    }
+        li a.nav_ac_hov:hover{
+            background-color: #91784e;
+            text-decoration: none;
+        }
+        .active {
+            background-color: #91784e;
+            text-decoration: none;
+        }
+        /*nav bar hovering style formats*/
     </style>
 </header>
+<body>
 <section>
-        <ul>
-            <li style="float:right"><a href="login.html" class="active">Log In</a></li>
-            <li style="float:right"><a href="registration.html">Register</a></li>
+        <ul class="nav">
+            <li class="nav_li" style="float: right;"><a href="login.html" class="nav_lia active nav_ac_hov">Log In</a></li>
+            <li class="nav_li" style="float: right;"><a href="registration.html" class="nav_lia nav_hov">Register</a></li>
         </ul>
 </section>
 <section>
@@ -75,4 +49,5 @@
         </form>
     </div>
 </section>
+</body>
 </html>
