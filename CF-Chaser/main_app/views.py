@@ -64,5 +64,6 @@ def logOut(request):
 
 @login_required
 def profile(request):
-    return render(request, 'Profile.html')
+    detail = checker.profile(request.user.username)
+    return render(request, 'Profile.html', {'name':detail['name'], 'handle':detail['handle'], 'current_rating':detail['cur_rating'], 'current_rank':detail['cur_rank'], 'max_rating':detail['max_rating'], 'max_rank':detail['max_rank'], 'country':detail['country'], 'orgranization':detail['organization'], 'profile_pic':detail['profile_picture']})
 
