@@ -78,7 +78,7 @@ def friendList(request):
     checkData(username=request.user.username)
 
     friends = dataProcessor.DP.friend_data
-    return render(request, 'Friends.html', {'friends':friends})
+    return render(request, 'Friends.html', {'friends':friends, 'R':201, 'G':20, 'B':222})
 
 @login_required
 def chaseByContest(request):
