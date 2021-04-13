@@ -1,68 +1,10 @@
-{% load static %}
-<!doctype html>
-<html class="no-js" lang="en">
-<header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <title>CodeForces Chaser</title>
-    <style>
-        img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-          height: auto;
-          border: solid black;
-          margin-top: 20px;
-        }
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        width: 100%;
-        text-decoration: none;
-    }
-    li {
-        float: left;
-    }
-    li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
+{% extends 'base.html' %}
 
-    li a:hover:not(.active) {
-        color: white;
-        background-color: #111;
-        text-decoration: none;
-    }
-    li a:hover{
-        color: white;
-        background-color: #91784e;
-        text-decoration: none;
-    }
-    .active {
-        color: white;
-        background-color: #91784e;
-        text-decoration: none;
-    }
-    </style>
-</header>
-<section>
-        <ul>
-            <li style="float:right" style="color: white;"><a href="{% url 'login' %}">Log In</a></li>
-            <li style="float:right" style="color: white;"><a href="{% url 'registration' %}" class="active">Register</a></li>
-        </ul>
-</section>
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Assets/registration.css' %}">
+
 <section>
     <div style="background-color: lavender; width:70%; margin-left: auto; margin-right: auto;">
         <h1 style="text-align: center; background-color: lavender; color: rgb(29, 0, 158); font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;">Register</h1>
@@ -93,4 +35,5 @@
         </form>
     </div>
 </section>
-</html>
+
+{% endblock %}

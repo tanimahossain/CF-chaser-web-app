@@ -34,6 +34,6 @@ class DP:
 
         self.my_profile = cfapi_handler.user_profile(username=username)
         for i in fr:
-            self.addInfo(username=i)
+            self.addInfo(self, username=i)
 
-        self.friendListData()
+        self.friendListData(self)

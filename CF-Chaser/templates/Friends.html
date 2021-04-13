@@ -1,101 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 {% load static %}
-<!doctype html>
-<html class="no-js" lang="en">
-<header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'Assets/style.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <title>CodeForces Chaser</title>
-    <style>
-        /*nav bar hovering style formats*/
-        li a.nav_hov:hover:not(.active) {
-            background-color: #111;
-            text-decoration: none;
-        }
-        li a.nav_ac_hov:hover{
-            background-color: #2089CA;
-            text-decoration: none;
-        }
-        .active {
-            background-color: #2089CA;
-            text-decoration: none;
-        }
-        /*nav bar hovering style formats*/
+<link rel="stylesheet" href="{% static 'Assets/friends.css' %}">
 
-    /* Style the list items */
-    ul li.frnd {
-        cursor: pointer;
-        position: relative;
-        padding: 12px 8px 12px 40px;
-        list-style-type: none;
-        background: #a8cadf;
-        font-size: 18px;
-        transition: 0.2s;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    /* Set all odd list items to a different color (zebra-stripes) */
-    ul li.frnd:nth-child(odd) {
-        background: #9ec3da;
-    }
-
-    /* Darker background-color on hover */
-    ul li.frnd:hover {
-        background: #93bfd8;
-    }
-    .btn {
-        background-color: DodgerBlue;
-        border: none;
-        color: white;
-        padding: 12px 16px;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .previous {
-        background-color: #b0d0e4;
-        color: black;
-        padding: 15px;
-    }
-    .next {
-        background-color: #2089CA;
-        color: white;
-        padding: 15px;
-    }
-    /*Printing list per row format*/
-    .grid-container {
-        display: grid;
-        grid-template-columns: 60% auto auto;
-        grid-gap: 0px;
-        padding: 12px 8px 12px 10px;
-        transition: 0.2s;
-        margin-right: 20%;
-        margin-left: 20%;
-        background-image: linear-gradient(to bottom right, #a8cadf, #2089CA);
-    }
-    .grid-container > div {
-        text-align: left;
-        font-size: 18px;
-    }
-    div.grid-container:hover{
-        background-image: linear-gradient(to bottom right, #bad3e3, #3e98cf);
-    }
-    /*Printing list per row format*/
-    </style>
-</header>
-<body>
 <section >
-    <ul class="nav">
-        <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
-        <li class="nav_li"><a href="Friends.html" class="nav_lia active nav_ac_hov">Friends</a></li>
-        <li class="nav_li"><a href="Chase By Contest.html" class="nav_lia nav_hov">Chase By Contest</a></li>
-        <li class="nav_li" style="float:right"><a href="{% url "logout" %}" class="nav_lia nav_hov">Log Out</a></li>
-    </ul>
     <form action="/action_page.php">
     <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">
         <input type="text" class="form-control" placeholder="CodeForces Handle" style="height: 40px; text-align: center; ">
@@ -113,7 +23,8 @@
         {% for friend in friends %}
 
             <div class="grid-container">
-                <div>friend.handle</div><div style="text-align: center;">friend.cur_rating</div><div style="text-align: center;">friend.max_rating</div>
+                <div>{{ friend.handle }}</div><div style="text-align: center;">{{ friend.cur_rating }}</div><div style="text-align: center;">
+                {{ friend.max_rating }}</div>
             </div>
 
         {% endfor %}
@@ -126,5 +37,5 @@
     </div>
     -->
 </section>
-</body>
-</html>
+
+{% endblock %}

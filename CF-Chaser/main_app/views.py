@@ -4,7 +4,9 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from . import checker, dataProcessor
 
-dp = dataProcessor.DP()
+def checkData(username):
+    if not checker.dataLoadCheck():
+        dataProcessor.DP.addAll(dataProcessor.DP, username=username)
 
 def registration(request):
 
@@ -24,8 +26,6 @@ def registration(request):
                         if request.POST['password'] == request.POST['confpassword']:
                             user = User.objects.create_user(username=request.POST['cfhandle'], password=request.POST['password'], email=request.POST['email'])
                             auth.login(request, user)
-
-                            dp.addAll(username=request.user.username)
                             return redirect('profile')
 
                         else:
@@ -50,8 +50,6 @@ def logIn(request):
 
             if user is not None:
                 auth.login(request, user)
-
-                dp.addAll(username=request.user.username)
                 return redirect('profile')
 
             else:
@@ -70,14 +68,20 @@ def logOut(request):
 
 @login_required
 def profile(request):
-    detail = dp.profileData()
+    checkData(username=request.user.username)
+
+    detail = dataProcessor.DP.profileData(dataProcessor.DP)
     return render(request, 'Profile.html', {'name':detail['name'], 'handle':detail['handle'], 'current_rating':detail['cur_rating'], 'current_rank':detail['cur_rank'], 'max_rating':detail['max_rating'], 'max_rank':detail['max_rank'], 'country':detail['country'], 'orgranization':detail['organization'], 'profile_pic':detail['profile_picture']})
 
-# @login_required
+@login_required
 def friendList(request):
-    friends = dp.friend_data
+    checkData(username=request.user.username)
+
+    friends = dataProcessor.DP.friend_data
     return render(request, 'Friends.html', {'friends':friends})
 
 @login_required
 def chaseByContest(request):
+    checkData(username=request.user.username)
+
     return render(request, 'Chase By Contest.html')
