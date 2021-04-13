@@ -1,24 +1,31 @@
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    text-decoration: none;
+}
+li.nav_li {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+li a.nav_lia {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-        .header_nav_back{
-            background-color: black;
-            margin-top: 0%;
-            margin-bottom: 0%;
-            margin-left: 0%;
-            margin-right: 0%;
-            width: 100%;
-            padding: 20px;
-            color: white;
-        }
-
-        .item_nav{
-            text-emphasis-color: white;
-        }
-        a:link, a:visited{
-            text-decoration: none;
-            color: white;
-        }
-        a:hover, a:active{
-            padding: 5px;
-            background-color: white;
-            color: black;
-        }
+.preloader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white
+    url('https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2014/04/scr_01.gif')
+    no-repeat center;
+    z-index: 9999999;
+}
