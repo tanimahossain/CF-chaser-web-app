@@ -11,6 +11,8 @@ def profile_varification():
 		print("user doesnt exist.")
 	else:
 		print("user exist.")
+		for (i, j) in profile.items():
+			print(i, j)
 
 
 def population_check():
@@ -47,4 +49,5 @@ def recommend():
 	for i in data:
 		print(i)
 
-contest_perticipation()
+profile_varification()
+

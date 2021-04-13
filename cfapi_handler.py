@@ -45,7 +45,7 @@ def user_profile(username):
 		ret["cur_rank"] = js["rank"];
 		ret["friend_of"] = js["friendOfCount"];
 		ret["address"] = js["city"] + ", " + js["country"];
-		ret["profile_picture"] = "https:"+js["titlePhoto"];
+		ret["profile_picture"] = js["titlePhoto"];
 	except:
 		return {}
 
