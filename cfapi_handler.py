@@ -36,16 +36,17 @@ def user_profile(username):
 	js = js["result"][0]
 
 	try:
-		ret["name"] = js["firstName"] + " " + js["lastName"];
-		ret["handle"] = js["handle"];
-		ret["organization"] = js["organization"];
-		ret["max_rating"] = js["maxRating"];	
-		ret["max_rank"] = js["maxRank"];
-		ret["cur_rating"] = js["rating"];
-		ret["cur_rank"] = js["rank"];
-		ret["friend_of"] = js["friendOfCount"];
-		ret["address"] = js["city"] + ", " + js["country"];
-		ret["profile_picture"] = js["titlePhoto"];
+		ret["name"] = js["firstName"] + " " + js["lastName"]
+		ret["handle"] = js["handle"]
+		ret["organization"] = js["organization"]
+		ret["max_rating"] = js["maxRating"]
+		ret["max_rank"] = js["maxRank"]
+		ret["cur_rating"] = js["rating"]
+		ret["cur_rank"] = js["rank"]
+		ret["friend_of"] = js["friendOfCount"]
+		ret["city"] = js["city"]
+		ret["country"] = js["country"]
+		ret["profile_picture"] = js["titlePhoto"]
 	except:
 		return {}
 
