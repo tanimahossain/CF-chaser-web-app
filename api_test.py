@@ -47,4 +47,4 @@ def recommend():
 	for i in data:
 		print(i)
 
-recommend()
+contest_perticipation()

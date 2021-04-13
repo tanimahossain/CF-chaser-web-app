@@ -13,10 +13,7 @@ def get_json(url):
 	try:
 		req = Request(url, headers=hdr)
 		page = Ureq(req)
-	except:
-		return None
-
-	try:
+		
 		js = page.read().decode()
 		js = json.loads(js)
 	except:
@@ -129,6 +126,23 @@ def recent_performance(username, last_x_day):
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
 
+def get_valid_contest_list():
+	url = "https://codeforces.com/api/contest.list"
+
+	js = get_json(url)
+	if not js or "status" not in js or js["status"] != "OK":
+		return set()
+
+	contest_list = set()
+	
+	for contest in js["result"]:
+		name = contest["name"]
+		if "Div" in name:
+			contest_list.add(contest["id"])
+
+	return contest_list
+
+
 def contest_participation(username):
 	url = "https://codeforces.com/api/user.status?handle="
 	url += username
@@ -136,10 +150,13 @@ def contest_participation(username):
 
 	if not js or "status" not in js or js["status"] != "OK":
 		return []
+
+	valid_contest = get_valid_contest_list()
 	contest_id = set()
 
 	for submission in js["result"]:
-		contest_id.add(submission["contestId"])
+		if submission["contestId"] in valid_contest:
+			contest_id.add(submission["contestId"])
 	
 	contest_id = list(contest_id)
 	contest_id.sort()
