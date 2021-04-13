@@ -95,9 +95,9 @@
 <body>
 <section>
         <ul>
-            <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
-            <li class="nav_li"><a href="Friends.html" class="nav_lia nav_hov">Friends</a></li>
-            <li class="nav_li"><a href="Chase By Contest.html"  class="nav_lia active nav_ac_hov">Chase By Contest</a></li>
+            <li class="nav_li"><a href="{% url 'profile' %}" class="nav_lia nav_hov">Profile</a></li>
+            <li class="nav_li"><a href="{% url 'friendlist' %}" class="nav_lia nav_hov">Friends</a></li>
+            <li class="nav_li"><a href="{% url 'chasebycontest' %}"  class="nav_lia active nav_ac_hov">Chase By Contest</a></li>
             <li style="float:right"  class="nav_li"><a href="{% url "logout" %}" class="nav_lia nav_hov">Log Out</a></li>
         </ul>
         <br>

@@ -4,6 +4,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from . import checker, dataProcessor
 
+dp = dataProcessor.DP()
 
 def registration(request):
 
@@ -24,6 +25,7 @@ def registration(request):
                             user = User.objects.create_user(username=request.POST['cfhandle'], password=request.POST['password'], email=request.POST['email'])
                             auth.login(request, user)
 
+                            dp.addAll(username=request.user.username)
                             return redirect('profile')
 
                         else:
@@ -48,7 +50,10 @@ def logIn(request):
 
             if user is not None:
                 auth.login(request, user)
+
+                dp.addAll(username=request.user.username)
                 return redirect('profile')
+
             else:
                 return render(request, 'login.html', {'error': 'Email and Password do not match'})
 
@@ -58,12 +63,21 @@ def logIn(request):
     else:
         return render(request, 'login.html')
 
+@login_required
 def logOut(request):
     auth.logout(request)
     return redirect('login')
 
 @login_required
 def profile(request):
-    detail = checker.profile(request.user.username)
+    detail = dp.profileData()
     return render(request, 'Profile.html', {'name':detail['name'], 'handle':detail['handle'], 'current_rating':detail['cur_rating'], 'current_rank':detail['cur_rank'], 'max_rating':detail['max_rating'], 'max_rank':detail['max_rank'], 'country':detail['country'], 'orgranization':detail['organization'], 'profile_pic':detail['profile_picture']})
 
+# @login_required
+def friendList(request):
+    friends = dp.friend_data
+    return render(request, 'Friends.html', {'friends':friends})
+
+@login_required
+def chaseByContest(request):
+    return render(request, 'Chase By Contest.html')

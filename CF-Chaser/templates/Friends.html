@@ -109,15 +109,15 @@
         <div class="grid-container">
             <div>CodeForces Handle</div><div style="text-align: center;">Current Rating</div><div style="text-align: center;">Max Rating</div>
         </div>
-        <div class="grid-container">
-            <div>De.wilde</div><div style="text-align: center;">1980</div><div style="text-align: center;">1890</div>
-        </div>
-        <div class="grid-container">
-            <div>el.duivel</div><div style="text-align: center;">1974</div><div style="text-align: center;">1892</div>
-        </div>
-        <div class="grid-container">
-            <div>KingEngine</div><div style="text-align: center;">1100</div><div style="text-align: center;">1100</div>
-        </div>
+
+        {% for friend in friends %}
+
+            <div class="grid-container">
+                <div>friend.handle</div><div style="text-align: center;">friend.cur_rating</div><div style="text-align: center;">friend.max_rating</div>
+            </div>
+
+        {% endfor %}
+
     </div>
     <!-- previous next list change
     <div style="text-align: right; margin-top: 2%;">

@@ -50,6 +50,10 @@ def user_profile(username):
 		ret["address"] = js["city"] + ", " + js["country"];
 		ret["profile_picture"] = js["titlePhoto"];
 		ret["country"] = js["country"]
+
+		ret['cur_rank'] = ret['cur_rank'][0].upper() + ret['cur_rank'][1:]
+		ret['max_rank'] = ret['max_rank'][0].upper() + ret['max_rank'][1:]
+
 	except:
 		return {}
 
