@@ -7,40 +7,50 @@
 
 <section>
     <div>
-        <img src={{ profile_pic }}>
+        <img src={{ detail.profile_picture }}>
     </div>
 
     <div>
         <div class="grid-container">
-            <div>Name:</div><div>{{ name }}</div>
+            <div style="font-weight: 700">Name:</div>
+            <div style="font-weight: 550">{{ detail.name }}</div>
         </div>
 
         <div class="grid-container">
-            <div>CF Handle:</div><div>{{ handle }}</div>
+            <div style="font-weight: 700">CF Handle:</div>
+            <div style="font-weight: 550">
+                <span style="color: rgb({{ detail.r1 }}, {{ detail.g1 }}, {{ detail.b1 }})">{{ detail.handle1 }}</span><span style="color: rgb({{ detail.r2 }}, {{ detail.g2 }}, {{ detail.b2 }})">{{ detail.handle2 }}</span>
+            </div>
         </div>
 
         <div class="grid-container">
-            <div>Current Rating:</div><div>{{ current_rating }}</div>
+            <div style="font-weight: 700">Current Rating:</div>
+            <div style="font-weight: 550; color: rgb({{ detail.crr }}, {{ detail.crg }}, {{ detail.crb }})">{{ detail.cur_rating }}</div>
         </div>
 
         <div class="grid-container">
-            <div>Current Rank:</div><div>{{ current_rank }}</div>
+            <div style="font-weight: 700">Current Rank:</div>
+            <div style="font-weight: 550; color: rgb({{ detail.crr }}, {{ detail.crg }}, {{ detail.crb }})">{{ detail.cur_rank }}</div>
         </div>
 
         <div class="grid-container">
-            <div>Max Rating:</div><div>{{ max_rating }}</div>
+            <div style="font-weight: 700">Max Rating:</div>
+            <div style="font-weight: 550; color: rgb({{ detail.mrr }}, {{ detail.mrg }}, {{ detail.mrb }})">{{ detail.max_rating }}</div>
         </div>
 
         <div class="grid-container">
-            <div>Max Rank:</div><div>{{ max_rank }}</div>
+            <div style="font-weight: 700">Max Rank:</div>
+            <div style="font-weight: 550; color: rgb({{ detail.mrr }}, {{ detail.mrg }}, {{ detail.mrb }})">{{ detail.max_rank }}</div>
         </div>
 
         <div class="grid-container">
-            <div>Organization:</div><div>{{ orgranization }}</div>
+            <div style="font-weight: 700">Organization:</div>
+            <div style="font-weight: 550">{{ detail.organization }}</div>
         </div>
 
         <div class="grid-container">
-            <div>Country</div><div>{{ country }}</div>
+            <div style="font-weight: 700">Country:</div>
+            <div style="font-weight: 550">{{ detail.country }}</div>
         </div>
     </div>
     <br>

@@ -11,11 +11,7 @@ class DP:
     # data processing for friend_list page
     def friendListData(self):
         for i in self.friend_profile:
-            self.friend_data.append({
-                'handle' : i['handle'],
-                'cur_rating' : i['cur_rating'],
-                'max_rating' : i['max_rating']
-            })
+            self.friend_data.append(i)
 
     # to get the data for profile page
     def profileData(self):
@@ -29,11 +25,11 @@ class DP:
         elif rating<1400:
             return [12, 115, 12, 12, 115, 12]
         elif rating<1600:
-            return [0, 255, 255, 0, 255, 255]
+            return [15, 222, 222, 0, 222, 222]
         elif rating<1900:
             return [0, 0, 255, 0, 0, 255]
         elif rating<2200:
-            return [238, 130, 238, 238, 130, 238]
+            return [214, 56, 214, 214, 56, 214]
         elif rating<2400:
             return [255, 165, 0, 255, 165, 0]
         elif rating<3000:
@@ -45,16 +41,32 @@ class DP:
     def getProfileData(self, username):
         profile = cfapi_handler.user_profile(username=username)
 
-        profile['handle_1st'] = profile['handle'][0]
-        profile['handle_last'] = profile['handle'][1:]
+        profile['handle1'] = profile['handle'][0]
+        profile['handle2'] = profile['handle'][1:]
 
         color = self.getColor(self, profile['cur_rating'])
-        profile['handle_color1'] = color[0:3]
-        profile['handle_color2'] = color[3:]
-        profile['cur_rating_color'] = color[3:]
+        handle_color1 = color[0:3]
+        handle_color2 = color[3:]
+        cur_rating_color = color[3:]
 
         color = self.getColor(self, profile['max_rating'])
-        profile['max_rating_color'] = color[3:]
+        max_rating_color = color[3:]
+
+        profile['r1'] = handle_color1[0]
+        profile['g1'] = handle_color1[1]
+        profile['b1'] = handle_color1[2]
+
+        profile['r2'] = handle_color2[0]
+        profile['g2'] = handle_color2[1]
+        profile['b2'] = handle_color2[2]
+
+        profile['crr'] = cur_rating_color[0]
+        profile['crg'] = cur_rating_color[1]
+        profile['crb'] = cur_rating_color[2]
+
+        profile['mrr'] = max_rating_color[0]
+        profile['mrg'] = max_rating_color[1]
+        profile['mrb'] = max_rating_color[2]
 
         return profile
 

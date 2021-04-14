@@ -49,7 +49,7 @@ def logIn(request):
 
             if user is not None:
                 auth.login(request, user)
-                dataProcessor.DP.addAll(dataProcessor.DP, username=user.username)
+                checkData(user.username)
                 return redirect('profile')
 
             else:
@@ -71,17 +71,21 @@ def profile(request):
     checkData(username=request.user.username)
 
     detail = dataProcessor.DP.profileData(dataProcessor.DP)
-    return render(request, 'Profile.html', {'name':detail['name'], 'handle':detail['handle'], 'current_rating':detail['cur_rating'], 'current_rank':detail['cur_rank'], 'max_rating':detail['max_rating'], 'max_rank':detail['max_rank'], 'country':detail['country'], 'orgranization':detail['organization'], 'profile_pic':detail['profile_picture']})
+
+    return render(request, 'Profile.html', {'detail':detail})
 
 @login_required
 def friendList(request):
     checkData(username=request.user.username)
 
     friends = dataProcessor.DP.friend_data
-    return render(request, 'Friends.html', {'friends':friends, 'R':201, 'G':20, 'B':222})
+    return render(request, 'Friends.html', {'friends':friends})
 
 @login_required
 def chaseByContest(request):
     checkData(username=request.user.username)
 
     return render(request, 'Chase By Contest.html')
+
+def contestDetails(request):
+    return render(request, 'contest details.html')
