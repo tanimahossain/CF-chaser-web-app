@@ -43,13 +43,13 @@ def registration(request):
 def logIn(request):
 
     if request.method == 'POST':
-
         try:
             user = User.objects.get(email=request.POST['email'])
             user = auth.authenticate(username=user.username, password=request.POST['password'])
 
             if user is not None:
                 auth.login(request, user)
+                dataProcessor.DP.addAll(dataProcessor.DP, username=user.username)
                 return redirect('profile')
 
             else:

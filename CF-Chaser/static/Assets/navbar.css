@@ -9,7 +9,7 @@ ul.nav {
 }
 li.nav_li {
     float: left;
-    color: white;
+    color: white; !important;
     text-decoration: none;
 }
 li a.nav_lia {
@@ -29,3 +29,29 @@ img {
     border: solid black;
     margin-top: 20px;
 }
+
+li a.nav_hov:hover:not(.active) {
+    background-color: #111;
+    text-decoration: none;
+}
+
+li a.firend_nav_ac_hov:hover{
+    background-color: #2089ca;
+    text-decoration: none;
+}
+
+li a.contest_nav_ac_hov:hover{
+    background-color: #B41D22;
+    text-decoration: none;
+}
+
+li a.profile_nav_ac_hov:hover{
+    background-color: #F9CF56;
+    text-decoration: none;
+}
+
+li a.reg_nav_ac_hov:hover{
+    background-color: #91784e;
+    text-decoration: none;
+}
+

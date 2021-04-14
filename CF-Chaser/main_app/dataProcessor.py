@@ -64,6 +64,11 @@ class DP:
         info = self.getProfileData(self, username)
         self.friend_profile.append(info)
 
+    def clearData(self):
+        self.friend_data = []
+        self.friend_profile = []
+        self.my_profile = {}
+
     # after log in update all friend data
     def addAll(self, username):
         username = str(username)
