@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="Assets/list.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <title>CodeForces Chaser</title>
     <style>
         /*nav bar hovering style formats*/
-        li a.nav_hov:hover:not(.active) {
+        li a.frnd_nav_hov:hover:not(.active) {
             background-color: #111;
             text-decoration: none;
         }
@@ -56,44 +57,51 @@
         cursor: pointer;
         border-radius: 5px;
     }
-    .previous {
-        background-color: #b0d0e4;
-        color: black;
-        padding: 15px;
-    }
-    .next {
-        background-color: #2089CA;
-        color: white;
-        padding: 15px;
-    }
     /*Printing list per row format*/
     .grid-container {
         display: grid;
-        grid-template-columns: 60% auto auto;
+        grid-template-columns: 70% auto auto;
         grid-gap: 0px;
         padding: 12px 8px 12px 10px;
         transition: 0.2s;
         margin-right: 20%;
         margin-left: 20%;
-        background-image: linear-gradient(to bottom right, #a8cadf, #2089CA);
+        background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
     }
     .grid-container > div {
         text-align: left;
         font-size: 18px;
     }
-    div.grid-container:hover{
-        background-image: linear-gradient(to bottom right, #bad3e3, #3e98cf);
-    }
     /*Printing list per row format*/
+    /*Previous next page button for the lists*/
+    .previous {
+        background-color: #E1E1E1;
+        color: black;
+        padding: 15px;
+    }
+    .previous:hover {
+        background-color: #000000;
+        color: white;
+    }
+    .next {
+        background-color: #B9B9B9;
+        color: black;
+        padding: 15px;
+    }
+    .next:hover {
+        background-color: #000000;
+        color: white;
+    }
+    /*Previous next page button for the lists*/
     </style>
 </header>
 <body>
 <section >
     <ul class="nav">
-        <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
+        <li class="nav_li"><a href="Profile.html" class="nav_lia frnd_nav_hov">Profile</a></li>
         <li class="nav_li"><a href="Friends.html" class="nav_lia active nav_ac_hov">Friends</a></li>
-        <li class="nav_li"><a href="Chase By Contest.html" class="nav_lia nav_hov">Chase By Contest</a></li>
-        <li class="nav_li" style="float:right"><a href="Login.html" class="nav_lia nav_hov">Log Out</a></li>
+        <li class="nav_li"><a href="Chase By Contest.html" class="nav_lia frnd_nav_hov">Chase By Contest</a></li>
+        <li class="nav_li" style="float:right"><a href="Login.html" class="nav_lia frnd_nav_hov">Log Out</a></li>
     </ul>
     <form action="/action_page.php">
     <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">

@@ -54,6 +54,7 @@
         background-color: #B41D22;
         text-decoration: none;
     }
+    
     /*Printing list per row format*/
     .grid-container {
         display: grid;
@@ -63,32 +64,36 @@
         transition: 0.2s;
         margin-right: 20%;
         margin-left: 20%;
-        background-image: linear-gradient(to bottom right, #f5aba6, #ed837e);
+        background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
     }
     .grid-container > div {
         text-align: left;
         font-size: 18px;
     }
     div.grid-container:hover{
-        background-image: linear-gradient(to bottom right, #fcc3c0, #f5aba6);
+        background-image: linear-gradient(to top, #E1E1E1, #B9B9B9, #E1E1E1);
     }
     /*Printing list per row format*/
+    /*Previous next page button for the lists*/
     .previous {
-        background-color: #f5a6a2;
+        background-color: #E1E1E1;
         color: black;
         padding: 15px;
     }
     .previous:hover {
-        color: #800600;
+        background-color: #000000;
+        color: white;
     }
     .next {
-        background-color: #d95750;
-        color: white;
+        background-color: #B9B9B9;
+        color: black;
         padding: 15px;
     }
     .next:hover {
-        color: #800600;
+        background-color: #000000;
+        color: white;
     }
+    /*Previous next page button for the lists*/
     </style>
 </header>
 <body>
@@ -105,11 +110,11 @@
                 <div>CodeForces Contest</div><div style="text-align: center;">Lagging</div><div style="text-align: center;">Advancing</div>
             </div>
             <div class="grid-container">
-                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none;">
+                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none; color: black;">
                     Codeforces Round #713 (Div. 3)</a></div><div style="text-align: center;">3</div><div style="text-align: center;">1</div>
             </div>
             <div class="grid-container">
-                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none;">
+                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none; color: black;">
                     Codeforces Round #712 (Div. 2)</a></div><div style="text-align: center;">0</div><div style="text-align: center;">1</div>
             </div>
         </div>

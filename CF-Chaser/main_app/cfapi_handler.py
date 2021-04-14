@@ -13,7 +13,10 @@ def get_json(url):
 	try:
 		req = Request(url, headers=hdr)
 		page = Ureq(req)
-		
+	except:
+		return None
+
+	try:
 		js = page.read().decode()
 		js = json.loads(js)
 	except:
@@ -36,17 +39,16 @@ def user_profile(username):
 	js = js["result"][0]
 
 	try:
-		ret["name"] = js["firstName"] + " " + js["lastName"]
-		ret["handle"] = js["handle"]
-		ret["organization"] = js["organization"]
-		ret["max_rating"] = js["maxRating"]
-		ret["max_rank"] = js["maxRank"]
-		ret["cur_rating"] = js["rating"]
-		ret["cur_rank"] = js["rank"]
-		ret["friend_of"] = js["friendOfCount"]
-		ret["city"] = js["city"]
-		ret["country"] = js["country"]
-		ret["profile_picture"] = js["titlePhoto"]
+		ret["name"] = js["firstName"] + " " + js["lastName"];
+		ret["handle"] = js["handle"];
+		ret["organization"] = js["organization"];
+		ret["max_rating"] = js["maxRating"];	
+		ret["max_rank"] = js["maxRank"];
+		ret["cur_rating"] = js["rating"];
+		ret["cur_rank"] = js["rank"];
+		ret["friend_of"] = js["friendOfCount"];
+		ret["address"] = js["city"] + ", " + js["country"];
+		ret["profile_picture"] = js["titlePhoto"];
 	except:
 		return {}
 
@@ -119,30 +121,13 @@ def recent_performance(username, last_x_day):
 			prob_tags.add(tag)
 	
 	ret["topic_solved"] = list(prob_tags)
-	ret["performance_point"] = str(total_rating_solved / (last_x_day * 24)) + " points / hour";
+	ret["performance_point"] = total_rating_solved / (last_x_day * 24)
 	return ret
 
 
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
-
-def get_valid_contest_list():
-	url = "https://codeforces.com/api/contest.list"
-
-	js = get_json(url)
-	if not js or "status" not in js or js["status"] != "OK":
-		return set()
-
-	contest_list = set()
-	
-	for contest in js["result"]:
-		name = contest["name"]
-		if "Div" in name:
-			contest_list.add(contest["id"])
-
-	return contest_list
-
 
 def contest_participation(username):
 	url = "https://codeforces.com/api/user.status?handle="
@@ -151,13 +136,10 @@ def contest_participation(username):
 
 	if not js or "status" not in js or js["status"] != "OK":
 		return []
-
-	valid_contest = get_valid_contest_list()
 	contest_id = set()
 
 	for submission in js["result"]:
-		if submission["contestId"] in valid_contest:
-			contest_id.add(submission["contestId"])
+		contest_id.add(submission["contestId"])
 	
 	contest_id = list(contest_id)
 	contest_id.sort()

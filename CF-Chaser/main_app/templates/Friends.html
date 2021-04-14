@@ -5,54 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Assets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <title>CodeForces Chaser</title>
     <style>
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 30%;
-      height: auto;
-      border: solid black;
-      margin-top: 20px;
-    }
-    ul.nav {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-        width: 100%;
-        text-decoration: none;
-    }
-    li.nav_li {
-        float: left;
-        color: white;
-        text-decoration: none;
-    }
-    li a.nav_lia {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    li a.nav_hov:hover:not(.active) {
-        background-color: #111;
-        text-decoration: none;
-    }
-    li a.nav_ac_hov:hover{
-        background-color: #2089CA;
-        text-decoration: none;
-    }
-    .active {
-        background-color: #2089CA;
-        text-decoration: none;
-    }
+        /*nav bar hovering style formats*/
+        li a.nav_hov:hover:not(.active) {
+            background-color: #111;
+            text-decoration: none;
+        }
+        li a.nav_ac_hov:hover{
+            background-color: #2089CA;
+            text-decoration: none;
+        }
+        .active {
+            background-color: #2089CA;
+            text-decoration: none;
+        }
+        /*nav bar hovering style formats*/
 
     /* Style the list items */
     ul li.frnd {
@@ -94,14 +66,34 @@
         color: white;
         padding: 15px;
     }
+    /*Printing list per row format*/
+    .grid-container {
+        display: grid;
+        grid-template-columns: 60% auto auto;
+        grid-gap: 0px;
+        padding: 12px 8px 12px 10px;
+        transition: 0.2s;
+        margin-right: 20%;
+        margin-left: 20%;
+        background-image: linear-gradient(to bottom right, #a8cadf, #2089CA);
+    }
+    .grid-container > div {
+        text-align: left;
+        font-size: 18px;
+    }
+    div.grid-container:hover{
+        background-image: linear-gradient(to bottom right, #bad3e3, #3e98cf);
+    }
+    /*Printing list per row format*/
     </style>
 </header>
+<body>
 <section >
     <ul class="nav">
         <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
-        <li class="nav_li"><a href="Friends.html" class="nav_lia active nav_ac_hov" >Friends</a></li>
+        <li class="nav_li"><a href="Friends.html" class="nav_lia active nav_ac_hov">Friends</a></li>
         <li class="nav_li"><a href="Chase By Contest.html" class="nav_lia nav_hov">Chase By Contest</a></li>
-        <li class="nav_li" style="float:right"><a href="Login.html" class="nav_lia nav_hov">Log Out</a></li>
+        <li class="nav_li" style="float:right"><a href="{% url "logout" %}" class="nav_lia nav_hov">Log Out</a></li>
     </ul>
     <form action="/action_page.php">
     <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">
@@ -113,17 +105,25 @@
     </div>
     </form>
     <div>
-        <ul class="frnd">
-            <li class="frnd">De.wilde</li>
-            <li class="frnd">el.duivel</li>
-            <li class="frnd">KingEngine</li>
-            <li class="frnd">Riadh_Hasan</li>
-            <li class="frnd">strange.r</li>
-          </ul>
+        <div class="grid-container">
+            <div>CodeForces Handle</div><div style="text-align: center;">Current Rating</div><div style="text-align: center;">Max Rating</div>
+        </div>
+        <div class="grid-container">
+            <div>De.wilde</div><div style="text-align: center;">1980</div><div style="text-align: center;">1890</div>
+        </div>
+        <div class="grid-container">
+            <div>el.duivel</div><div style="text-align: center;">1974</div><div style="text-align: center;">1892</div>
+        </div>
+        <div class="grid-container">
+            <div>KingEngine</div><div style="text-align: center;">1100</div><div style="text-align: center;">1100</div>
+        </div>
     </div>
+    <!-- previous next list change
     <div style="text-align: right; margin-top: 2%;">
         <a href="#" class="previous" style="margin-right: 0%; text-decoration: none;">&laquo; Previous</a>
         <a href="#" class="next" style="margin-right: 9.8%; text-decoration: none;">Next &raquo;</a>
     </div>
+    -->
 </section>
+</body>
 </html>

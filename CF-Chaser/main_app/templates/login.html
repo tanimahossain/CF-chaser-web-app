@@ -60,15 +60,21 @@
             <li style="float:right"><a href="{% url 'registration' %}">Register</a></li>
         </ul>
 </section>
+
 <section>
     <div style="background-color: lavender; width:70%; margin-left: auto; margin-right: auto;">
+
         <h1 style="text-align: center; background-color: lavender; color: rgb(29, 0, 158); font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;">Log In</h1>
-        <form action="/action_page.php">
+        {% if error %}
+            <p style="text-align: center; background-color: lavender; color: darkred; font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;"> <b><i>{{ error }}</i></b> </p>
+        {% endif %}
+        <form action="{% url 'login' %}", method="POST" >
+            {% csrf_token %}
             <div class="form-outline" style="margin-left: auto; margin-right: auto; width:50%">
-                <label class="form-label" for="pemail">Email:</label><br>
-                <input type="email" id="pemail"  class="form-control"><br>
-                <label class="form-label" for="ppassword">Password:</label><br>
-                <input type="password" id="ppassword"  class="form-control"><br>
+                <label class="form-label" for="email">Email:</label><br>
+                <input type="email" id="email" name="email"  class="form-control"><br>
+                <label class="form-label" for="password">Password:</label><br>
+                <input type="password" id="password" name="password"  class="form-control"><br>
                 <div style="text-align: center;"><input type="submit" value="Log In" class="btn btn-primary" style="text-align: center;"></div>
                 <p style="padding: 50px;"> </p>
             </div>
