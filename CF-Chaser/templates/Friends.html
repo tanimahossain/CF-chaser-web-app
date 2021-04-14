@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Assets/friends.css' %}">
+
+<section >
+    <form action="/action_page.php">
+    <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">
+        <input type="text" class="form-control" placeholder="CodeForces Handle" style="height: 40px; text-align: center; ">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-plus"></i></button>
+            <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-minus"></i></button>
+        </div>
+    </div>
+    </form>
+    <div>
+        <div class="grid-container">
+            <div>CodeForces Handle</div><div style="text-align: center;">Current Rating</div><div style="text-align: center;">Max Rating</div>
+        </div>
+
+        {% for friend in friends %}
+
+            <div class="grid-container">
+                <div>{{ friend.handle }}</div>
+                <div style="text-align: center;">{{ friend.cur_rating }}</div><div style="text-align: center;">
+                {{ friend.max_rating }}</div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+    <!-- previous next list change
+    <div style="text-align: right; margin-top: 2%;">
+        <a href="#" class="previous" style="margin-right: 0%; text-decoration: none;">&laquo; Previous</a>
+        <a href="#" class="next" style="margin-right: 9.8%; text-decoration: none;">Next &raquo;</a>
+    </div>
+    -->
+</section>
+
+{% endblock %}

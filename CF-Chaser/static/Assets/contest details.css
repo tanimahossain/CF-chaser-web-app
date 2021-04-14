@@ -1,18 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Assets/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <title>CodeForces Chaser</title>
-    <!--html comment-->
-    <style>
-        /*nav bar hovering style formats*/
+/*nav bar hovering style formats*/
         li a.nav_hov:hover:not(.active) {
             background-color: #111;
             text-decoration: none;
@@ -26,7 +12,8 @@
             text-decoration: none;
         }
         /*nav bar hovering style formats*/
-    ul {
+
+ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -89,28 +76,3 @@
     .next:hover {
         color: #800600;
     }
-    </style>
-</header>
-<body>
-<section>
-        <ul>
-            <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
-            <li class="nav_li"><a href="Friends.html" class="nav_lia nav_hov">Friends</a></li>
-            <li class="nav_li"><a href="Chase By Contest.html"  class="nav_lia active nav_ac_hov">Chase By Contest</a></li>
-            <li style="float:right"  class="nav_li"><a href="{% url "logout" %}" class="nav_lia nav_hov">Log Out</a></li>
-        </ul>
-        <br>
-        <div>
-            <div class="grid-container">
-                <div>CodeForces Handle</div><div>Solved Problem ID</div>
-            </div>
-            <div class="grid-container">
-                <div>Youkn0wWho</div><div>A, B, C, E, F, G, H, I, K, L, M, N, O, P, Q, R</div>
-            </div>
-            <div class="grid-container">
-                <div>fsshakkhor</div><div>A, B, C, E, F, G, H, I, K, L, M, N, O, P, Q, R</div>
-            </div>
-        </div>
-</section>
-</body>
-</html>

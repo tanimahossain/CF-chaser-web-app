@@ -7,4 +7,6 @@ urlpatterns = [
     path('login/', views.logIn, name='login'),
     path('logout/', views.logOut, name='logout'),
     path('profile/', views.profile, name='profile'),
+    path('friends/', views.friendList, name='friendlist'),
+    path('chase-by-contest/', views.chaseByContest, name='chasebycontest')
 ]

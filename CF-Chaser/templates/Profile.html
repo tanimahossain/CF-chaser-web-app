@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Assets/profile.css' %}">
+
+<section>
+    <div>
+        <img src={{ profile_pic }}>
+    </div>
+
+    <div>
+        <div class="grid-container">
+            <div>Name:</div><div>{{ name }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>CF Handle:</div><div>{{ handle }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Current Rating:</div><div>{{ current_rating }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Current Rank:</div><div>{{ current_rank }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Max Rating:</div><div>{{ max_rating }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Max Rank:</div><div>{{ max_rank }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Organization:</div><div>{{ orgranization }}</div>
+        </div>
+
+        <div class="grid-container">
+            <div>Country</div><div>{{ country }}</div>
+        </div>
+    </div>
+    <br>
+</section>
+
+{% endblock %}

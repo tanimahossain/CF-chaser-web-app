@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'Assets/chase by contest.css' %}">
+
+<section>
+        <div>
+            <div class="grid-container">
+                <div>CodeForces Contest</div><div style="text-align: center;">Lagging</div><div style="text-align: center;">Advancing</div>
+            </div>
+            <div class="grid-container">
+                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none;">
+                    Codeforces Round #713 (Div. 3)</a></div><div style="text-align: center;">3</div><div style="text-align: center;">1</div>
+            </div>
+            <div class="grid-container">
+                <div><a href="Contest Details.html" target="_blank" style="text-decoration: none;">
+                    Codeforces Round #712 (Div. 2)</a></div><div style="text-align: center;">0</div><div style="text-align: center;">1</div>
+            </div>
+        </div>
+{#        <div style="text-align: right; margin-top: 2%;">#}
+{#            <a href="#" class="previous hover" style="margin-right: 0%; text-decoration: none;">&laquo; Previous</a>#}
+{#            <a href="#" class="next hover" style="margin-right: 20%; text-decoration: none;">Next &raquo;</a>#}
+{#        </div>#}
+</section>
+
+{% endblock %}
