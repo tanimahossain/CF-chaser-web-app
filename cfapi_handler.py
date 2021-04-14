@@ -119,7 +119,7 @@ def recent_performance(username, last_x_day):
 			prob_tags.add(tag)
 	
 	ret["topic_solved"] = list(prob_tags)
-	ret["performance_point"] = total_rating_solved / (last_x_day * 24)
+	ret["performance_point"] = str(total_rating_solved / (last_x_day * 24)) + " points / hour";
 	return ret
 
 
