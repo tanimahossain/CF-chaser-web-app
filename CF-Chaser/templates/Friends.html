@@ -16,16 +16,18 @@
     </div>
     </form>
     <div>
-        <div class="grid-container">
-            <div>CodeForces Handle</div><div style="text-align: center;">Current Rating</div><div style="text-align: center;">Max Rating</div>
+        <div class="grid-container" style="font-weight: 700">
+            <div>CodeForces Handle</div>
+            <div style="text-align: center;">Current Rating</div>
+            <div style="text-align: center;">Max Rating</div>
         </div>
 
         {% for friend in friends %}
 
             <div class="grid-container">
-                <div>{{ friend.handle }}</div>
-                <div style="text-align: center;">{{ friend.cur_rating }}</div><div style="text-align: center;">
-                {{ friend.max_rating }}</div>
+                <div style="font-weight: 550"><span style="color: rgb({{ friend.r1 }}, {{ friend.g1 }}, {{ friend.b1 }})">{{ friend.handle1 }}</span><span style="color: rgb({{ friend.r2 }}, {{ friend.g2 }}, {{ friend.b2 }})">{{ friend.handle2 }}</span></div>
+                <div style="text-align: center; font-weight: 550; color: rgb({{ friend.crr }}, {{ friend.crg }}, {{ friend.crb }})">{{ friend.cur_rating }}</div>
+                <div style="text-align: center; font-weight: 550;color: rgb({{ friend.mrr }}, {{ friend.mrg }}, {{ friend.mrb }})">{{ friend.max_rating }}</div>
             </div>
 
         {% endfor %}

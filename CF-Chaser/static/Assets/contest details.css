@@ -12,8 +12,7 @@
             text-decoration: none;
         }
         /*nav bar hovering style formats*/
-
-ul {
+    ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -41,6 +40,9 @@ ul {
         background-color: #B41D22;
         text-decoration: none;
     }
+    #solves:hover{
+            background-image: linear-gradient(to top, #E1E1E1, #B9B9B9, #E1E1E1);
+        }
     /*Printing list per row format*/
     .grid-container {
         display: grid;
@@ -50,29 +52,10 @@ ul {
         transition: 0.2s;
         margin-right: 20%;
         margin-left: 20%;
-        background-image: linear-gradient(to bottom right,#d6ddff, #f5aba6, #edffa8);
+        background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
     }
     .grid-container > div {
         text-align: left;
         font-size: 18px;
     }
-    div.grid-container:hover{
-        background-image: linear-gradient(to bottom right, #fcc3c0, #f0fcc0);
-    }
     /*Printing list per row format*/
-    .previous {
-        background-color: #f5a6a2;
-        color: black;
-        padding: 15px;
-    }
-    .previous:hover {
-        color: #800600;
-    }
-    .next {
-        background-color: #d95750;
-        color: white;
-        padding: 15px;
-    }
-    .next:hover {
-        color: #800600;
-    }

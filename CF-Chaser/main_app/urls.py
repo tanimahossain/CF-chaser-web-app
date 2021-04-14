@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout/', views.logOut, name='logout'),
     path('profile/', views.profile, name='profile'),
     path('friends/', views.friendList, name='friendlist'),
-    path('chase-by-contest/', views.chaseByContest, name='chasebycontest')
+    path('chase-by-contest/', views.chaseByContest, name='chasebycontest'),
+    path('contest-datails/', views.contestDetails, name='contestdetails')
 ]
