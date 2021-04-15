@@ -43,12 +43,12 @@
     /*Printing list per row format*/
     .grid-container {
         display: grid;
-        grid-template-columns: 60% 25% 25%;
+        grid-template-columns: 60% 20% 20%;
         grid-gap: 0px;
         padding: 12px 8px 12px 10px;
         transition: 0.2s;
-        margin-right: 20%;
-        margin-left: 20%;
+        margin-right: 15%;
+        margin-left: 15%;
         background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
     }
     .grid-container > div {
