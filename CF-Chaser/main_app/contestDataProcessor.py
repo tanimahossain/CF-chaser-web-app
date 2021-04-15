@@ -33,7 +33,22 @@ class contest:
         self.contest_list = set()
 
         for i, j in self.api_dict.items():
-            self.contest_list.add(i)
+            cnt=0
+            for name, k in self.api_dict[i]['user'].items():
+                cnt += len(k)
+
+            if cnt>0:
+                self.contest_list.add(i)
+
+    def removeFriend(self, username):
+        for i, j in self.api_dict.items():
+            self.api_dict[i]['user'][username]=[]
+        self.makeContestList(self)
+
+    def addFriend(self, username):
+        new_frnd = cfapi_handler.contest_participation([username])
+        self.api_dict[username] = new_frnd[username]
+        self.makeContestList(self)
 
     def addAllContestData(self, username):
         username = str(username)
