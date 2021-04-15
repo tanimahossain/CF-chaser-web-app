@@ -3,16 +3,19 @@ import cfapi_handler
 import problem_recommender
 
 def profile_varification():
-	user_name = input("username -- ")
+	user_name = input("usernames e.g. 'strange_r ah_med' -- ")
+	user_name = user_name.split()
 
 	profile = cfapi_handler.user_profile(user_name)
 
-	if "name" not in profile:
-		print("user doesnt exist.")
-	else:
-		print("user exist.")
-		for (i, j) in profile.items():
-			print(i, j)
+	print("-----------------------------------")
+	print("---------- Profile Data -----------")
+	print("-----------------------------------")
+	for (i, j) in profile.items():
+		print(i,"\n")
+		for (k, l) in j.items():
+			print(k," : ", l)
+		print("-----------------------------------\n")
 
 
 def population_check():
@@ -30,18 +33,15 @@ def recent_performance():
 		print(i, j)
 
 def contest_perticipation():
-	user_name = input("username -- ")
-	data = cfapi_handler.contest_participation(user_name)
-	for i in data:
-		print(i)
+	data = cfapi_handler.contest_participation(["strange_r", "ah_med", "el.duivel","erfanul007","gHo0sT"])	
 
-def contest_solve():
-	user_name = input("username -- ")
-	contest_id = input("contest id -- ")
-	data = cfapi_handler.contest_solve(user_name, contest_id)
-	print(data)
+	print("------------------------------------------")
+	for (cid, cdata) in data.items():
+		print(cid, " : ", cdata["name"]);
 
-
+		for (user, solve) in cdata["user"].items():
+			print(user, " : ", solve);
+		print("------------------------------------------")
 
 def recommend():
 	username = input("username -- ")
@@ -49,5 +49,5 @@ def recommend():
 	for i in data:
 		print(i)
 
-profile_varification()
+contest_perticipation()
 
