@@ -7,13 +7,16 @@
 
 <section>
         <div>
-            <div class="grid-container">
-                <div><b>CodeForces Handle</b></div><div><b>Solved Problem ID</b></div>
+            <div class="grid-container" style="font-weight: 700">
+                <div>CodeForces Handle</div>
+                <div>Solved Problem ID</div>
             </div>
-            <div class="grid-container" id="solves">
-                <div>Youkn0wWho</div>
-                <div>A, B, C, E, F, G, H, I, K, L, M, N, O, P, Q, R</div>
-            </div>
+            {% for user in detail %}
+                <div class="grid-container" id="solves">
+                    <div style="font-weight: 550"><span style="color: rgb({{ user.r1 }}, {{ user.g1 }}, {{ user.b1 }})">{{ user.handle1 }}</span><span style="color: rgb({{ user.r2 }}, {{ user.g2 }}, {{ user.b2 }})">{{ user.handle2 }}</span></div>
+                    <div>{{ user.solve_list }}</div>
+                </div>
+            {% endfor %}
             </div>
         </div>
 </section>

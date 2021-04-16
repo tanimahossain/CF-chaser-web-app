@@ -15,7 +15,7 @@
 
             {% for contest in contests %}
                 <div class="grid-container" id="info">
-                    <div><a href="{% url 'contestdetails' %}" target="_blank" style="text-decoration: none; color: black;">
+                    <div><a href="{% url 'contestdetails' contest.id %}" target="_blank" style="text-decoration: none; color: black;">
                         {{ contest.name }}</a></div>
                     <div style="text-align: center;">{{ contest.lagging }}</div>
                     <div style="text-align: center;">{{ contest.advancing }}</div>

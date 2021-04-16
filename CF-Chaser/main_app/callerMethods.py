@@ -69,3 +69,35 @@ def removeFriend(username, me):
         return True
     else:
         return False
+
+def getContestDetails(username, id):
+    checkDataUpdate(username)
+    detail = contestDataProcessor.contest.api_dict[id]['user']
+
+    ret = []
+    handle_list = [profileDataProcessor.profile.my_profile]
+
+    for i in profileDataProcessor.profile.friend_profile:
+        handle_list.append(i)
+
+    for i in handle_list:
+        user = i['handle']
+
+        solve = detail[user]
+        solve = sorted(solve)
+
+        solve_list=''
+        cnt=0
+
+        for j in solve:
+            if cnt>0:
+                solve_list += ', '
+            solve_list += j
+            cnt += 1
+
+        if len(solve_list)==0:
+            solve_list += 'None'
+        i['solve_list'] = solve_list
+        ret.append(i)
+
+    return ret
