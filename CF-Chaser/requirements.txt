@@ -1,0 +1,17 @@
+appdirs==1.4.4
+beautifulsoup4==4.6.0
+certifi==2020.6.20
+chardet==3.0.4
+distlib==0.3.1
+filelock==3.0.12
+html5lib==1.1
+idna==2.10
+mechanize==0.4.5
+numpy==1.20.1
+pipenv==2020.8.13
+requests==2.23.0
+six==1.15.0
+urllib3==1.25.11
+virtualenv==20.0.35
+virtualenv-clone==0.5.4
+webencodings==0.5.1
