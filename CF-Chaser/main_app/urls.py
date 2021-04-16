@@ -12,4 +12,5 @@ urlpatterns = [
     path('contest-datails/', views.contestDetails, name='contestdetails'),
     path('addfriend/', views.addFriend, name='addfriend'),
     path('removefriend/', views.removeFriend, name='removefriend'),
+    path('contestdetails/<int:contest_id>', views.contestDetails, name='contestdetails'),
 ]
