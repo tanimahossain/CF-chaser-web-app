@@ -12,7 +12,7 @@
                 <div>Solved Problem ID</div>
             </div>
             {% for user in detail %}
-                <div class="grid-container" id="solves">
+                <div class="grid-container">
                     <div style="font-weight: 550"><span style="color: rgb({{ user.r1 }}, {{ user.g1 }}, {{ user.b1 }})">{{ user.handle1 }}</span><span style="color: rgb({{ user.r2 }}, {{ user.g2 }}, {{ user.b2 }})">{{ user.handle2 }}</span></div>
                     <div>{{ user.solve_list }}</div>
                 </div>

@@ -40,9 +40,7 @@
         background-color: #B41D22;
         text-decoration: none;
     }
-    #solves:hover{
-            background-image: linear-gradient(to top, #E1E1E1, #B9B9B9, #E1E1E1);
-        }
+
     /*Printing list per row format*/
     .grid-container {
         display: grid;

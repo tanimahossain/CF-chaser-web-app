@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . import callerMethods
 
 def registration(request):
@@ -111,7 +112,18 @@ def addFriend(request):
 @login_required(login_url='login')
 def chaseByContest(request):
     contests = callerMethods.getChessByContestData(request.user.username)
-    return render(request, 'Chase By Contest.html', {'contests':contests})
+
+    paginator = Paginator(contests, 20)
+    page_num = request.GET.get('page', 1)
+
+    try:
+        details = paginator.page(page_num)
+    except PageNotAnInteger:
+        details = paginator.page(1)
+    except EmptyPage:
+        details = paginator.page(paginator.num_pages)
+
+    return render(request, 'Chase By Contest.html', {'contests':details})
 
 @login_required(login_url='login')
 def contestDetails(request, contest_id):
