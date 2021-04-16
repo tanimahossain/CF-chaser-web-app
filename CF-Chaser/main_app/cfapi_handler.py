@@ -233,8 +233,10 @@ def contest_participation(usernames):
             continue
 
         for submission in js["result"]:
-
-            cid = submission["contestId"]
+            try:
+                cid = submission["contestId"]
+            except:
+                continue
             idx = submission["problem"]["index"]
 
             if submission["verdict"] == "OK" and cid in valid_contest:

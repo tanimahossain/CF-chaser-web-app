@@ -15,3 +15,6 @@ urllib3==1.25.11
 virtualenv==20.0.35
 virtualenv-clone==0.5.4
 webencodings==0.5.1
+pillow
+django-active-link
+
