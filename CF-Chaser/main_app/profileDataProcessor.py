@@ -5,6 +5,7 @@ class profile:
 
     friend_profile=[]
     my_profile={}
+    cur_user = ''
 
     def clearData(self):
         self.friend_data = []
@@ -12,6 +13,7 @@ class profile:
         self.my_profile = {}
         self.contest = []
         self.all_contest_id = []
+        self.cur_user = ''
 
     # processing profile data
     def processProfileData(self, profile):
@@ -21,8 +23,7 @@ class profile:
     def addOneData(self, username):
         username = str(username)
         profile = cfapi_handler.user_profile([username])
-
-        profile = profile[username]
+        profile = profile[str(username)]
         return self.processProfileData(self, profile)
 
     def removeFriend(self, username):

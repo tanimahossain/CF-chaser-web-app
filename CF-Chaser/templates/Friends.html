@@ -6,13 +6,22 @@
 <link rel="stylesheet" href="{% static 'Assets/friends.css' %}">
 
 <section >
-    <form action="/action_page.php">
+    <form action="{% url 'addfriend' %}" method="POST">
+    {% csrf_token %}
     <div class="input-group" style="text-align: center; padding: 20px; margin-left: 20%; margin-right: 20%;">
-        <input type="text" class="form-control" placeholder="CodeForces Handle" style="height: 40px; text-align: center; ">
+        <input type="text" name="cfHandle" class="form-control" placeholder="Enter CodeForces Handle. Upto 20 Friends Can Be Added" style="height: 40px; text-align: center;" required>
         <div class="input-group-btn">
+{#            add friend button#}
             <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-plus"></i></button>
-            <button class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-minus"></i></button>
+{#            remove friend button#}
+            <button formaction="{% url 'removefriend' %}" class="btn btn-default" type="submit" style="height: 40px;"><i class="fas fa-user-minus"></i></button>
         </div>
+
+        {% if msg %}
+            <div>
+                {{ msg }}
+            </div>
+        {% endif %}
     </div>
     </form>
     <div>
