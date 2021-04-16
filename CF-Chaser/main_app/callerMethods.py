@@ -9,7 +9,10 @@ def checkUser(cfHandle):
 
     if cfHandle not in profile:
         return False
+    elif 'handle' not in profile[cfHandle]:
+        return False
     else:
+        print(profile)
         return True
 
 def checkDataUpdate(cfHandle):
@@ -37,6 +40,7 @@ def getChessByContestData(username):
     return contestDataProcessor.contest.chaseByContest(contestDataProcessor.contest, username)
 
 def addFriend(username, me):
+    print('username = ', username)
     if len(profileDataProcessor.profile.friend_profile) == 20:
         return 1
     if not checkUser(username):
