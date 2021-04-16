@@ -54,7 +54,6 @@
         background-color: #B41D22;
         text-decoration: none;
     }
-    
     /*Printing list per row format*/
     .grid-container {
         display: grid;
@@ -93,12 +92,21 @@
         background-color: #000000;
         color: white;
     }
+    .button_unclickable {
+        background-color: #D9D9D9;
+        color: #B7B7B7;
+        padding: 13px 15px;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+    }
     /*Previous next page button for the lists*/
     </style>
 </header>
 <body>
 <section>
         <ul>
+            <li class="nav_li"><a href="Homepage.html" class="nav_lia nav_hov">Home</a></li>
             <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
             <li class="nav_li"><a href="Friends.html" class="nav_lia nav_hov">Friends</a></li>
             <li class="nav_li"><a href="Chase By Contest.html"  class="nav_lia active nav_ac_hov">Chase By Contest</a></li>
@@ -121,6 +129,10 @@
         <div style="text-align: right; margin-top: 2%;">
             <a href="#" class="previous hover" style="margin-right: 0%; text-decoration: none;">&laquo; Previous</a>
             <a href="#" class="next hover" style="margin-right: 20%; text-decoration: none;">Next &raquo;</a>
+        </div>
+        <div style="text-align: right; margin-top: 2%;">
+            <button type="button" class="button_unclickable">&laquo; Previous</button>
+            <button type="button" class="button_unclickable" style="margin-right: 20%;">Next &raquo;</button>
         </div>
 </section>
 </body>

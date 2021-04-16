@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <title>CodeForces Chaser</title>
+    <!--html comment-->
     <style>
         /*nav bar hovering style formats*/
         li a.nav_hov:hover:not(.active) {
@@ -17,11 +18,11 @@
             text-decoration: none;
         }
         li a.nav_ac_hov:hover{
-            background-color: #F9CF56;
+            background-color: #B41D22;
             text-decoration: none;
         }
         .active {
-            background-color: #F9CF56;
+            background-color: #B41D22;
             text-decoration: none;
         }
         /*nav bar hovering style formats*/
@@ -50,20 +51,21 @@
         text-decoration: none;
     }
     li a:hover{
-        background-color: #F9CF56;
+        background-color: #B41D22;
         text-decoration: none;
     }
-            
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-    height: auto;
-    /*border: solid black;*/
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    /*for contest name/title*/
+    .titlespace{
+        padding: 12px 8px 12px 10px;
+        transition: 0.2s;
+        margin-right: 20%;
+        margin-left: 20%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
+    }
+    /*for contest name/title*/
     /*Printing list per row format*/
     .grid-container {
         display: grid;
@@ -71,8 +73,8 @@ img {
         grid-gap: 0px;
         padding: 12px 8px 12px 10px;
         transition: 0.2s;
-        margin-right: 30%;
-        margin-left: 30%;
+        margin-right: 20%;
+        margin-left: 20%;
         background-image: linear-gradient(to top right, #E1E1E1, #FFFFFF, #E1E1E1);
     }
     .grid-container > div {
@@ -84,44 +86,26 @@ img {
 </header>
 <body>
 <section>
-        <ul class="nav">
-            <li class="nav_li"><a href="Profile.html" class="nav_lia active nav_ac_hov" style="color: black;">Profile</a></li>
+        <ul>
+            <li class="nav_li"><a href="Homepage.html" class="nav_lia nav_hov">Home</a></li>
+            <li class="nav_li"><a href="Profile.html" class="nav_lia nav_hov">Profile</a></li>
             <li class="nav_li"><a href="Friends.html" class="nav_lia nav_hov">Friends</a></li>
-            <li class="nav_li"><a href="Chase By Contest.html"  class="nav_lia nav_hov">Chase By Contest</a></li>
-            <li class="nav_li" style="float:right"><a href="Login.html"  class="nav_lia nav_hov">Log Out</a></li>
+            <li class="nav_li"><a href="Chase By Contest.html"  class="nav_lia active nav_ac_hov">Chase By Contest</a></li>
+            <li style="float:right"  class="nav_li"><a href="Login.html" class="nav_lia nav_hov">Log Out</a></li>
         </ul>
-</section>
-<section>
-    <div>
-        <img src="https://i.pinimg.com/736x/6b/08/76/6b087603862a127ea290e0a47ed932bf.jpg">
-    </div>
-    <div>
-        <div class="grid-container">
-            <div>Name:</div><div>ABC</div>
+        <br>
+        <div>
+            <div class="titlespace">Codeforces Round #712 (Div. 1)</div>
+            <div class="grid-container">
+                <div>CodeForces Handle</div><div>Solved Problem ID</div>
+            </div>
+            <div class="grid-container">
+                <div>tourist</div><div>A, B, C, D, E</div>
+            </div>
+            <div class="grid-container">
+                <div>_Ash__</div><div>A, B, C</div>
+            </div>
         </div>
-        <div class="grid-container">
-            <div>CF Handle:</div><div>efg</div>
-        </div>
-        <div class="grid-container">
-            <div>Current Rating:</div><div>1892</div>
-        </div>
-        <div class="grid-container">
-            <div>Current Rank:</div><div>Expert</div>
-        </div>
-        <div class="grid-container">
-            <div>Max Rating:</div><div>1980</div>
-        </div>
-        <div class="grid-container">
-            <div>Max Rank:</div><div>Candidate Master</div>
-        </div>
-        <div class="grid-container">
-            <div>Organization:</div><div>Daffodil International University</div>
-        </div>
-        <div class="grid-container">
-            <div>Country</div><div>Bangladesh</div>
-        </div>
-    </div>
-    <br>
 </section>
 </body>
 </html>
