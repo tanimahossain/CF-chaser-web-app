@@ -13,4 +13,5 @@ urlpatterns = [
     path('removefriend/', views.removeFriend, name='removefriend'),
     path('contestdetails/<int:contest_id>', views.contestDetails, name='contestdetails'),
     path('', views.Home, name='home'),
+    path('home/', views.Home, name='home')
 ]
