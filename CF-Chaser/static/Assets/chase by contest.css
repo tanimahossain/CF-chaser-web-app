@@ -6,10 +6,7 @@
             background-color: #B41D22;
             text-decoration: none;
         }
-        .active {
-            background-color: #B41D22;
-            text-decoration: none;
-        }
+
         /*nav bar hovering style formats*/
     ul {
         list-style-type: none;
@@ -78,5 +75,14 @@
     .next:hover {
         background-color: #000000;
         color: white;
+    }
+    .button_unclickable {
+        background-color: #D9D9D9;
+        color: #B7B7B7;
+        padding: 13px 15px;
+        text-align: center;
+        text-decoration: none;
+        pointer-events: none;
+        border: none;
     }
     /*Previous next page button for the lists*/

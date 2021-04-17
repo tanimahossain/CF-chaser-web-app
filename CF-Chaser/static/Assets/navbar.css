@@ -9,7 +9,7 @@ ul.nav {
 }
 li.nav_li {
     float: left;
-    color: white; !important;
+    color: white;
     text-decoration: none;
 }
 li a.nav_lia {
@@ -35,7 +35,7 @@ li a.nav_hov:hover:not(.active) {
     text-decoration: none;
 }
 
-li a.firend_nav_ac_hov:hover{
+li a.friend_nav_ac_hov:hover{
     background-color: #2089ca;
     text-decoration: none;
 }
@@ -51,6 +51,43 @@ li a.profile_nav_ac_hov:hover{
 }
 
 li a.reg_nav_ac_hov:hover{
+    background-color: #91784e;
+    text-decoration: none;
+}
+
+li a.home_nav_ac_hov:hover{
+    background-color: green;
+    text-decoration: none;
+}
+
+.chase_by_contest .active {
+    background-color: #B41D22;
+    text-decoration: none;
+}
+
+.friends .active {
+    background-color: #2089CA;
+    text-decoration: none;
+}
+
+.home .active {
+    color: white;
+    background-color: green;
+    text-decoration: none;
+}
+
+.profile .active {
+    background-color: #F9CF56;
+    text-decoration: none;
+}
+
+.login .active {
+    background-color: #91784e;
+    text-decoration: none;
+}
+
+.registration .active {
+    color: white;
     background-color: #91784e;
     text-decoration: none;
 }
