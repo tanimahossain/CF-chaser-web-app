@@ -7,11 +7,7 @@
             background-color: green;
             text-decoration: none;
         }
-        .active {
-            color: white;
-            background-color: green;
-            text-decoration: none;
-        }
+
         /*nav bar hovering style formats*/
         .introdiv{
             border-radius: 15px;

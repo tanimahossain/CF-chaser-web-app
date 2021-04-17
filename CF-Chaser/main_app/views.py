@@ -130,5 +130,5 @@ def chaseByContest(request):
 
 @login_required(login_url='login')
 def contestDetails(request, contest_id):
-    detail = callerMethods.getContestDetails(request.user.username, contest_id)
-    return render(request, 'contest details.html', {'detail':detail})
+    detail, contest_name = callerMethods.getContestDetails(request.user.username, contest_id)
+    return render(request, 'contest details.html', {'detail':detail, 'contest_name':contest_name})

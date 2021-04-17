@@ -6,10 +6,7 @@
             background-color: #B41D22;
             text-decoration: none;
         }
-        .active {
-            background-color: #B41D22;
-            text-decoration: none;
-        }
+
         /*nav bar hovering style formats*/
     ul {
         list-style-type: none;

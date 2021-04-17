@@ -20,17 +20,17 @@
 <body>
 <section>
         <ul class="nav">
-            <li class="nav_li"><a href="{% url 'home' %}" class="{% active_link 'home' 'active'%} nav_lia nav_hov home_nav_ac_hov">Home</a></li>
+            <li class="nav_li"><a href="{% url 'home' %}" class="{% active_link 'home' 'home_active home_nav_ac_hov'%} nav_lia nav_hov">Home</a></li>
 
             {% if user.is_authenticated %}
-                <li class="nav_li"><a href="{% url 'profile' %}"  class="{% active_link 'profile' 'active'%} nav_lia nav_hov profile_nav_ac_hov" style="{% active_link 'profile' 'color: black'%}">Profile</a></li>
-                <li class="nav_li"><a href="{% url 'friendlist' %}" class="{% active_link 'friendlist' 'active'%} nav_lia nav_hov firend_nav_ac_hov">Friends</a></li>
-                <li class="nav_li"><a href="{% url 'chasebycontest' %}"  class="{% active_link 'chasebycontest' 'active'%} nav_lia nav_hov contest_nav_ac_hov">Chase By Contest</a></li>
+                <li class="nav_li"><a href="{% url 'profile' %}"  class="{% active_link 'profile' 'active profile_nav_ac_hov'%} nav_lia nav_hov" style="{% active_link 'profile' 'color: black'%}">Profile</a></li>
+                <li class="nav_li"><a href="{% url 'friendlist' %}" class="{% active_link 'friendlist' 'active friend_nav_ac_hov'%} nav_lia nav_hov">Friends</a></li>
+                <li class="nav_li"><a href="{% url 'chasebycontest' %}"  class="{% active_link 'chasebycontest' 'active contest_nav_ac_hov'%} nav_lia nav_hov">Chase By Contest</a></li>
                 <li style="float:right"  class="nav_li"><a href="{% url "logout" %}" class="nav_lia nav_hov">Log Out</a></li>
 
             {% else %}
-                <li style="float:right" style="color: white;"><a href="{% url 'login' %}" class="{% active_link 'login' 'active'%} nav_lia nav_hov reg_nav_ac_hov">Log In</a></li>
-                <li style="float:right" style="color: white;"><a href="{% url 'registration' %}" class="{% active_link 'registration' 'active'%} nav_lia nav_hov reg_nav_ac_hov">Register</a></li>
+                <li style="float:right" style="color: white;"><a href="{% url 'login' %}" class="{% active_link 'login' 'active reg_nav_ac_hov'%} nav_lia nav_hov">Log In</a></li>
+                <li style="float:right" style="color: white;"><a href="{% url 'registration' %}" class="{% active_link 'registration' 'active reg_nav_ac_hov'%} nav_lia nav_hov">Register</a></li>
 
             {% endif %}
         </ul>
