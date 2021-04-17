@@ -22,14 +22,19 @@
                 </div>
             {% endfor %}
         </div>
-        <div style="text-align: right; margin-top: 2%;">
-            <a {% if contests.has_previous %} href="?page={{ contests.previous_page_number }}" style="margin-right: 2%; text-decoration: none;" class="previous hover"
-                {% else %} href="javascript:void(0)" style="margin-right: 2%;" class="button_unclickable" {% endif %}
-               >&laquo; Previous</a>
 
-            <a {% if contests.has_next %} href="?page={{ contests.next_page_number }}" style="margin-right: 20%;  text-decoration: none;" class="next hover"
-                {% else %} href="javascript:void(0)" style="margin-right: 20%;" class="button_unclickable" {% endif %}
-                >Next &raquo;</a>
+        <div style="text-align: right; margin-top: 2%;">
+            {% if contests.has_previous %}
+                <a href="?page={{ contests.previous_page_number }}" class="previous hover" style="margin-right: 2%; text-decoration: none;">&laquo; Previous</a>
+            {% else %}
+                <button type="button" class="button_unclickable">&laquo; Previous</button>
+            {% endif %}
+
+            {% if contests.has_next %}
+                <a href="?page={{ contests.next_page_number }}" class="next hover" style="margin-right: 20%; text-decoration: none;">Next &raquo;</a>
+            {% else %}
+                <button type="button" class="button_unclickable" style="margin-right: 20%;">Next &raquo;</button>
+            {% endif %}
         </div>
         <br> <br>
 </section>
