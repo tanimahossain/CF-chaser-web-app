@@ -103,5 +103,6 @@ def getContestDetails(username, id):
             solve_list += 'None'
         i['solve_list'] = solve_list
         ret.append(i)
+    ret['contest_name'] = contestDataProcessor.contest.api_dict[id]['name']
 
     return ret

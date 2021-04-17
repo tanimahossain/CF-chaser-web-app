@@ -9,7 +9,7 @@ ul.nav {
 }
 li.nav_li {
     float: left;
-    color: white; !important;
+    color: white;
     text-decoration: none;
 }
 li a.nav_lia {
@@ -52,6 +52,11 @@ li a.profile_nav_ac_hov:hover{
 
 li a.reg_nav_ac_hov:hover{
     background-color: #91784e;
+    text-decoration: none;
+}
+
+li a.home_nav_ac_hov:hover{
+    background-color: green;
     text-decoration: none;
 }
 

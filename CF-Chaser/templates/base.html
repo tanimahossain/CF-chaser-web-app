@@ -20,6 +20,8 @@
 <body>
 <section>
         <ul class="nav">
+            <li class="nav_li"><a href="{% url 'home' %}" class="{% active_link 'home' 'active'%} nav_lia nav_hov home_nav_ac_hov">Home</a></li>
+
             {% if user.is_authenticated %}
                 <li class="nav_li"><a href="{% url 'profile' %}"  class="{% active_link 'profile' 'active'%} nav_lia nav_hov profile_nav_ac_hov" style="{% active_link 'profile' 'color: black'%}">Profile</a></li>
                 <li class="nav_li"><a href="{% url 'friendlist' %}" class="{% active_link 'friendlist' 'active'%} nav_lia nav_hov firend_nav_ac_hov">Friends</a></li>

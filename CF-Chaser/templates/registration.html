@@ -9,7 +9,9 @@
     <div style="background-color: lavender; width:70%; margin-left: auto; margin-right: auto;">
         <h1 style="text-align: center; background-color: lavender; color: rgb(29, 0, 158); font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;">Register</h1>
         {% if error %}
-            <p style="text-align: center; background-color: lavender; color: darkred; font-weight: bold;font-family: Lucida Console, Courier New, monospace; padding: 50px;"> <b><i>{{ error }}</i></b> </p>
+            <div>
+                <p style="text-align: center;">{{ error }}</p>
+            </div>
         {% endif %}
 
         <form action="{% url 'registration' %}", method='POST'>

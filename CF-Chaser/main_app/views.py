@@ -64,6 +64,9 @@ def logOut(request):
     auth.logout(request)
     return redirect('login')
 
+def Home(request):
+    return render(request, 'Homepage.html')
+
 @login_required(login_url='login')
 def profile(request):
     detail = callerMethods.getProfileData(request.user.username)
